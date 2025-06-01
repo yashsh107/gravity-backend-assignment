@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "738d793a-fe03-45e1-a8b4-96d81daf7417",
+		"name": "Gravity Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26523536"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yash.sharma11@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Generation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yash.sharma21883@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Yash@12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0ODgxNDQ3MCwiaWF0IjoxNzQ4NzI4MDcwLCJqdGkiOiI0N2I3NGIwOTc5OGM0MDg5YWQ2MGEyMzJjZTFiMzNjNSIsInVzZXJfaWQiOiI4MzZkNWJiNi1iMGQ5LTRlMDEtYWJiNS1mNWM1ODI4MGE0NDAifQ.YXAiKzpIhyOlxTKFDurF8jwVVa4fMYc-I7v7MhDFITw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create a new customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMzAwODE4LCJpYXQiOjE3NDg3NjQ4MTgsImp0aSI6ImU1MGMwM2Q3ZDkyYjRlZDg4NGRkYzhjODUyYjU1NTNkIiwidXNlcl9pZCI6IjgzNmQ1YmI2LWIwZDktNGUwMS1hYmI1LWY1YzU4MjgwYTQ0MCJ9.05QOv4ycsJ2lTmxusvhxT05VotwaQAQhqtXX3gz_RiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Apoorv chopra",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "apoorv1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9131378515",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rajendra nagar, Raipur",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMzAwODE4LCJpYXQiOjE3NDg3NjQ4MTgsImp0aSI6ImU1MGMwM2Q3ZDkyYjRlZDg4NGRkYzhjODUyYjU1NTNkIiwidXNlcl9pZCI6IjgzNmQ1YmI2LWIwZDktNGUwMS1hYmI1LWY1YzU4MjgwYTQ0MCJ9.05QOv4ycsJ2lTmxusvhxT05VotwaQAQhqtXX3gz_RiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customers/?search=&page=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMzAwODE4LCJpYXQiOjE3NDg3NjQ4MTgsImp0aSI6ImU1MGMwM2Q3ZDkyYjRlZDg4NGRkYzhjODUyYjU1NTNkIiwidXNlcl9pZCI6IjgzNmQ1YmI2LWIwZDktNGUwMS1hYmI1LWY1YzU4MjgwYTQ0MCJ9.05QOv4ycsJ2lTmxusvhxT05VotwaQAQhqtXX3gz_RiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customers/baab6296-4c9d-4e27-8c49-14147d1d899b/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"baab6296-4c9d-4e27-8c49-14147d1d899b",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update customer info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMzAwODE4LCJpYXQiOjE3NDg3NjQ4MTgsImp0aSI6ImU1MGMwM2Q3ZDkyYjRlZDg4NGRkYzhjODUyYjU1NTNkIiwidXNlcl9pZCI6IjgzNmQ1YmI2LWIwZDktNGUwMS1hYmI1LWY1YzU4MjgwYTQ0MCJ9.05QOv4ycsJ2lTmxusvhxT05VotwaQAQhqtXX3gz_RiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Yash",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yash@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9424221883",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Pandri Raipur",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customers/baab6296-4c9d-4e27-8c49-14147d1d899b/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"baab6296-4c9d-4e27-8c49-14147d1d899b",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwMzAwODE4LCJpYXQiOjE3NDg3NjQ4MTgsImp0aSI6ImU1MGMwM2Q3ZDkyYjRlZDg4NGRkYzhjODUyYjU1NTNkIiwidXNlcl9pZCI6IjgzNmQ1YmI2LWIwZDktNGUwMS1hYmI1LWY1YzU4MjgwYTQ0MCJ9.05QOv4ycsJ2lTmxusvhxT05VotwaQAQhqtXX3gz_RiY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/customers/baab6296-4c9d-4e27-8c49-14147d1d899b/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"baab6296-4c9d-4e27-8c49-14147d1d899b",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
